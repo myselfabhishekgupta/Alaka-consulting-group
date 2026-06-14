@@ -89,6 +89,26 @@
       padding-bottom: 2px;
     }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 30;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #c9a84c;
+      transition: all 0.3s ease;
+    }
+
     .nav-cta {
       border: 1.5px solid #c9a84c;
       background: transparent;
@@ -171,7 +191,7 @@
     }
 
     .hero h1 {
-      font-size: 46px;
+      font-size: clamp(30px, 8vw, 46px);
       font-weight: 600;
       line-height: 1.08;
       color: #fff;
@@ -550,16 +570,44 @@
         padding: 1rem;
       }
 
+      .nav-toggle {
+        display: flex;
+      }
+
       .nav-links {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 72px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 72px);
+        background: #0d0d0d;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 25;
+        border-top: 0.5px solid #2a2a2a;
+      }
+
+      .nav-links.nav-open {
+        right: 0;
+      }
+
+      .nav-links a {
+        font-size: 16px;
       }
 
       .hero {
         padding: 3rem 1.5rem 1.5rem;
       }
 
-      .hero h1 {
-        font-size: 30px;
+      .hero-bg {
+        width: 100%;
+        background:
+          linear-gradient(to left, rgba(13, 13, 13, 0) 0%, #0d0d0d 100%),
+          linear-gradient(135deg, #1c1508 0%, #2a1f08 50%, #0d0d0d 100%);
       }
 
       .stats-row {
@@ -585,7 +633,7 @@
       }
 
       .services-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .srv-card:nth-child(odd) {
@@ -593,7 +641,7 @@
       }
 
       .who-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .who-cell:nth-child(2) {
@@ -614,6 +662,28 @@
 
       .contact-section {
         padding: 3rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid, .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .srv-card, .who-cell {
+        border-right: none;
+        border-bottom: 0.5px solid #ddd;
+      }
+
+      .who-cell:last-child {
+        border-bottom: none;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -641,6 +711,11 @@
     </div>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in
       touch</button>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO AND STATS WRAPPER -->
@@ -783,6 +858,20 @@
     <div class="f-copy">© 2026 Alaka Consulting Group. All rights reserved.</div>
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+      });
+    });
+  </script>
 </body>
 
 </html>
