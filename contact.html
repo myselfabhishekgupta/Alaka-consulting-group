@@ -273,7 +273,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     max-width: 1100px; margin: 0 auto;
-    align-items: start;
   }
   .office-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .office-card {
@@ -300,31 +299,16 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
-    height: 240px;
+    min-height: 240px;
     display: flex; align-items: center; justify-content: center;
     position: relative;
   }
-  .world-map svg { width: 100%; height: 100%; opacity: 0.4; }
-  .map-pin {
-    position: absolute;
-    width: 12px; height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    border: 2px solid rgba(201,168,76,0.3);
-    box-shadow: 0 0 12px var(--gold);
+  .world-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
   }
-  .map-pin::after {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    background: rgba(201,168,76,0.15);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0; transform: scale(2); } }
-  .pin-ny { top: 38%; left: 22%; }
-  .pin-lon { top: 28%; left: 47%; }
-  .pin-dub { top: 44%; left: 58%; }
 
   /* ---- CTA STRIP ---- */
   .cta-strip {
@@ -639,34 +623,7 @@
       </div>
     </div>
     <div class="world-map">
-      <!-- Simplified world map SVG -->
-      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-        <rect width="800" height="400" fill="transparent"/>
-        <!-- Grid dots -->
-        <defs>
-          <pattern id="dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="8" cy="8" r="1" fill="#C9A84C" opacity="0.4"/>
-          </pattern>
-        </defs>
-        <!-- Rough continent shapes -->
-        <!-- North America -->
-        <path d="M80,80 Q120,60 160,80 Q200,90 210,120 Q220,150 200,180 Q180,200 160,200 Q130,210 110,200 Q80,180 70,150 Q60,120 80,80Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <!-- South America -->
-        <path d="M140,220 Q170,215 185,240 Q200,270 190,310 Q175,340 155,340 Q130,335 120,310 Q110,280 120,250 Q130,230 140,220Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <!-- Europe -->
-        <path d="M340,70 Q370,60 390,80 Q405,95 400,115 Q390,130 375,130 Q355,128 345,110 Q335,90 340,70Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <!-- Africa -->
-        <path d="M350,150 Q385,140 405,165 Q420,195 415,240 Q405,280 385,300 Q360,310 340,295 Q320,275 320,240 Q318,200 330,170 Q338,155 350,150Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <!-- Asia -->
-        <path d="M420,55 Q500,40 580,60 Q640,75 660,110 Q670,140 640,160 Q600,175 550,170 Q490,165 450,150 Q415,135 410,105 Q408,78 420,55Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <!-- Australia -->
-        <path d="M580,240 Q625,230 650,255 Q670,278 655,305 Q635,325 605,320 Q575,312 565,285 Q558,260 580,240Z" fill="#C9A84C" opacity="0.15" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-        <rect width="800" height="400" fill="url(#dots)" opacity="0.6"/>
-      </svg>
-      <!-- Pins -->
-      <div class="map-pin pin-ny" title="New York"></div>
-      <div class="map-pin pin-lon" title="London"></div>
-      <div class="map-pin pin-dub" title="Dubai"></div>
+      <img src="logo-templates/locations.jpeg" alt="World Map" />
     </div>
   </div>
 </section>
