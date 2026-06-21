@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alaka Consulting Group | For Startups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black: #0a0908;
+    --panel: #111110;
+    --panel-2: #15140f;
+    --gold: #d6a13c;
+    --gold-light: #e7bc66;
+    --cream: #f4efe6;
+    --gray: #b9b4a9;
+    --gray-dim: #8a857a;
+    --line: rgba(214,161,60,0.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    letter-spacing:0.3px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 48px;
+  }
+  .eyebrow{
+    color:var(--gold);
+    font-size:12.5px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:500;
+    margin-bottom:14px;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:var(--black);
+    position:relative;
+    z-index:50;
+  }
+  .nav-wrap{
+    max-width:1240px;
+    margin:0 auto;
+    padding:20px 48px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{display:flex;align-items:center;gap:14px;}
+  .logo .mark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px;
+    font-weight:600;
+    color:var(--gold);
+    line-height:1;
+  }
+  .logo .word{display:flex;flex-direction:column;line-height:1.05;}
+  .logo .word b{
+    font-family:'Jost', sans-serif;
+    font-size:20px;
+    font-weight:500;
+    letter-spacing:3px;
+    color:var(--cream);
+  }
+  .logo .word span{
+    font-size:9.5px;
+    letter-spacing:2.5px;
+    color:var(--gray-dim);
+    margin-top:2px;
+  }
+  nav ul{list-style:none;display:flex;gap:34px;}
+  nav a{
+    font-size:12.5px;
+    letter-spacing:1.3px;
+    color:var(--gray);
+    text-transform:uppercase;
+    padding-bottom:6px;
+    position:relative;
+    transition:color .2s ease;
+  }
+  nav a:hover{color:var(--cream);}
+  nav a.active{
+    color:var(--gold);
+    border-bottom:1.5px solid var(--gold);
+  }
+  .nav-right{display:flex;align-items:center;gap:34px;}
+  .btn-outline{
+    border:1px solid var(--gold);
+    color:var(--gold);
+    font-size:11.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:13px 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:all .2s ease;
+    white-space:nowrap;
+    background:transparent;
+    cursor:pointer;
+    font-family:'Jost', sans-serif;
+  }
+  .btn-outline:hover{background:var(--gold);color:var(--black);}
+  .btn-solid{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--black);
+    font-size:11.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:500;
+    padding:14px 28px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:none;
+    cursor:pointer;
+    transition:filter .2s ease;
+    white-space:nowrap;
+  }
+  .btn-solid:hover{filter:brightness(1.08);}
+
+  /* ===== HERO ===== */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+  }
+  .hero-left{
+    padding:64px 48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    max-width:560px;
+  }
+  .breadcrumb{
+    font-size:11.5px;
+    letter-spacing:1.5px;
+    color:var(--gray-dim);
+    text-transform:uppercase;
+    margin-bottom:34px;
+  }
+  .breadcrumb .sep{margin:0 8px;color:var(--gold);}
+  .hero-left h1{
+    font-size:40px;
+    line-height:1.2;
+    color:var(--cream);
+    margin-bottom:22px;
+  }
+  .hero-left h1 .accent{color:var(--gold);display:block;}
+  .rule{width:60px;height:2px;background:var(--gold);margin-bottom:24px;}
+  .hero-left p{
+    font-size:14.5px;
+    line-height:1.85;
+    color:var(--gray);
+    font-weight:300;
+    margin-bottom:30px;
+  }
+  .hero-ctas{display:flex;gap:16px;margin-bottom:48px;}
+  .btn-outline-light{
+    border:1px solid rgba(255,255,255,0.35);
+    color:var(--cream);
+    font-size:11.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:13px 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:all .2s ease;
+  }
+  .btn-outline-light:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .hf{display:flex;flex-direction:column;gap:14px;}
+  .hf-icon{
+    width:42px;height:42px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+  }
+  .hf-icon svg{width:18px;height:18px;}
+  .hf p{font-size:12px;line-height:1.6;color:var(--gray-dim);margin:0;}
+
+  .hero-right{position:relative;overflow:hidden;min-height:520px;}
+  .hero-right img{width:100%;height:100%;object-fit:cover;}
+  .hero-right::after{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(10,9,8,0.5) 0%, rgba(10,9,8,0) 30%);
+  }
+
+  /* ===== TRUSTED BY ===== */
+  .trusted{
+    border-top:1px solid rgba(255,255,255,0.06);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:var(--panel);
+    padding:34px 0;
+    text-align:center;
+  }
+  .trusted .eyebrow{margin-bottom:24px;}
+  .logos{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:64px;
+    flex-wrap:wrap;
+    opacity:0.85;
+  }
+  .logos .lg{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    color:var(--gray);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    line-height:1.1;
+  }
+  .logos .lg small{
+    font-family:'Jost', sans-serif;
+    font-size:9px;
+    letter-spacing:2px;
+    color:var(--gray-dim);
+    margin-top:2px;
+  }
+  .logos .lg.sans{font-family:'Jost', sans-serif;font-weight:500;letter-spacing:0.5px;}
+
+  /* ===== WE HELP YOU ===== */
+  .section{padding:96px 0;}
+  .help-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .help-grid img{
+    width:100%;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .help-grid h2{font-size:32px;color:var(--cream);margin-bottom:18px;}
+  .help-grid > div p.lead{
+    font-size:14.5px;
+    line-height:1.85;
+    color:var(--gray);
+    margin-bottom:30px;
+  }
+  .check-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 32px;
+    margin-bottom:34px;
+  }
+  .check-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--cream);
+  }
+  .check-item svg{width:17px;height:17px;color:var(--gold);flex-shrink:0;}
+
+  /* ===== PROCESS ===== */
+  .process{
+    background:var(--panel);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:2px;
+    padding:56px 48px;
+    text-align:center;
+  }
+  .process .eyebrow{text-align:center;}
+  .steps{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    position:relative;
+    margin-top:46px;
+  }
+  .step{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    padding:0 10px;
+  }
+  .step::before{
+    content:'';
+    position:absolute;
+    top:30px;
+    left:-50%;
+    width:100%;
+    height:0;
+    border-top:1px dashed rgba(214,161,60,0.35);
+    z-index:0;
+  }
+  .step:first-child::before{display:none;}
+  .step-circle{
+    width:60px;height:60px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+    background:var(--black);
+    color:var(--gold);
+    position:relative;
+    z-index:1;
+  }
+  .step-circle svg{width:22px;height:22px;}
+  .step .num{font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:6px;}
+  .step h4{font-size:17px;color:var(--cream);font-weight:500;margin-bottom:10px;}
+  .step p{font-size:12px;line-height:1.7;color:var(--gray-dim);max-width:170px;}
+
+  /* ===== RESOURCES ===== */
+  .resources-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:1px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .res-card{
+    background:var(--black);
+    padding:32px 28px;
+  }
+  .res-icon{
+    width:46px;height:46px;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+    color:var(--gold);
+  }
+  .res-icon svg{width:21px;height:21px;}
+  .res-card h4{font-size:17px;color:var(--cream);margin-bottom:10px;font-weight:500;}
+  .res-card p{font-size:12.5px;line-height:1.7;color:var(--gray);margin-bottom:16px;}
+  .res-card .dl{
+    font-size:11.5px;
+    letter-spacing:0.8px;
+    color:var(--gold);
+    text-transform:uppercase;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .res-card.cta-card{
+    background:var(--panel-2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .res-card.cta-card h4{font-size:19px;margin-bottom:10px;}
+  .res-card.cta-card p{margin-bottom:22px;}
+
+  /* ===== TESTIMONIALS ===== */
+  .testi-wrap{
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
+  .arrow-btn{
+    width:42px;height:42px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    cursor:pointer;
+    background:transparent;
+  }
+  .arrow-btn svg{width:16px;height:16px;}
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    flex:1;
+  }
+  .testi-card{
+    border:1px solid rgba(255,255,255,0.08);
+    background:var(--panel);
+    padding:30px 28px;
+  }
+  .testi-card .quote-mark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:36px;
+    color:var(--gold);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .testi-card p.qt{
+    font-size:13px;
+    line-height:1.8;
+    color:var(--gray);
+    margin-bottom:24px;
+    min-height:84px;
+  }
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-person img{
+    width:42px;height:42px;
+    border-radius:50%;
+    object-fit:cover;
+  }
+  .testi-person b{font-size:13.5px;color:var(--cream);font-weight:500;display:block;}
+  .testi-person span{font-size:11.5px;color:var(--gray-dim);}
+
+  /* ===== CTA ===== */
+  .cta-banner{
+    margin:0 auto 64px;
+    max-width:1240px;
+    padding:0 48px;
+  }
+  .cta-inner{
+    position:relative;
+    min-height:280px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border:1px solid var(--gold);
+  }
+  .cta-inner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .cta-inner::after{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(10,9,8,0.92) 25%, rgba(10,9,8,0.35) 70%);
+    z-index:1;
+  }
+  .cta-content{position:relative;z-index:2;padding:48px 56px;max-width:520px;}
+  .cta-content h2{font-size:32px;color:var(--cream);margin-bottom:14px;}
+  .cta-content p{font-size:14.5px;color:var(--gray);margin-bottom:28px;}
+
+  @media(max-width:980px){
+    .hero{grid-template-columns:1fr;}
+    .hero-features{grid-template-columns:repeat(2,1fr);}
+    .help-grid{grid-template-columns:1fr;}
+    .resources-grid{grid-template-columns:1fr 1fr;}
+    .testi-grid{grid-template-columns:1fr;}
+    .steps{flex-direction:column;gap:32px;}
+    .step::before{display:none;}
+    .logos{gap:32px;}
+    nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">
+      <span class="mark">AG</span>
+      <div class="word">
+        <b>ALAKA</b>
+        <span>CONSULTING GROUP</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#" class="active">For Startups</a></li>
+        <li><a href="#">For Investors</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="#" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="breadcrumb">HOME <span class="sep">›</span> FOR STARTUPS</div>
+    <div class="eyebrow">For Startups</div>
+    <h1>From Vision to Valuation.<span class="accent">From Pitch to Partnership.</span></h1>
+    <div class="rule"></div>
+    <p>We help ambitious startups raise the right capital and build long-term relationships with the right investors to scale with confidence.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-solid">Get Funding Ready →</a>
+      <a href="#" class="btn-outline-light">Schedule a Call →</a>
+    </div>
+    <div class="hero-features">
+      <div class="hf">
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3v18M5 4h12l-2.5 4L17 12H5"/></svg></div>
+        <p>Strategic Guidance at Every Stage</p>
+      </div>
+      <div class="hf">
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="8" r="2.6"/><path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5M14.5 14.3c.5-.1.9-.2 1.5-.2 2.8 0 5 2.2 5 5"/></svg></div>
+        <p>Access to 120+ Investor Network</p>
+      </div>
+      <div class="hf">
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg></div>
+        <p>Tailored Fundraising Strategy</p>
+      </div>
+      <div class="hf">
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19h18M5 19v-7m5 7v-9m5 9v-5m5 5V8"/></svg></div>
+        <p>Long-Term Growth Partner</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="logo-templates/startup page photo.png" alt="Startup Page Hero">
+  </div>
+</section>
+
+<section class="trusted">
+  <div class="container">
+    <div class="eyebrow">Trusted by Ambitious Founders</div>
+    <div class="logos">
+      <span class="lg">Accel</span>
+      <span class="lg sans">✳ BLUME</span>
+      <span class="lg">PEAK XV <small>PARTNERS</small></span>
+      <span class="lg sans">lightspeed</span>
+      <span class="lg sans">✶ Kalaari</span>
+      <span class="lg">3one4 <small>CAPITAL</small></span>
+      <span class="lg sans">INFO EDGE <small>VENTURES</small></span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="help-grid">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop" alt="Team presenting fundraising roadmap in meeting">
+      <div>
+        <div class="eyebrow">We Help You</div>
+        <h2>Raise Smart. Scale Fast.</h2>
+        <p class="lead">Our tailored advisory solutions help you navigate the fundraising journey with clarity, confidence, and the right connections.</p>
+        <div class="check-list">
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Fundraising Strategy</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Investor Introductions</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Investor Mapping &amp; Targeting</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Negotiation Support</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Pitch Deck &amp; Story Refinement</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Due Diligence Support</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Valuation &amp; Term Sheet Guidance</div>
+          <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>Post-Fundraise Advisory</div>
+        </div>
+        <a href="#" class="btn-solid">Explore Our Services →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="process">
+      <div class="eyebrow">Our Proven Process</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <div class="num">01</div>
+          <h4>Understand</h4>
+          <p>We dive deep into your vision, business model, traction, and capital needs.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M7 20h10M9 17v3M15 17v3"/></svg></div>
+          <div class="num">02</div>
+          <h4>Strategize</h4>
+          <p>We craft a customized fundraising strategy tailored to your goals and market landscape.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5M14.5 14.8c.6-.2 1-.3 1.5-.3 3.3 0 6 2.5 6 5.5"/></svg></div>
+          <div class="num">03</div>
+          <h4>Connect</h4>
+          <p>We introduce you to the right investors from our curated network.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
+          <div class="num">04</div>
+          <h4>Negotiate</h4>
+          <p>We manage discussions and negotiate the best possible terms for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18M5 20V12m5 8V9m5 11v-6m5 6V5"/></svg></div>
+          <div class="num">05</div>
+          <h4>Support</h4>
+          <p>We stay with you beyond the raise to support your growth and future rounds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="eyebrow">Resources for Founders</div>
+    <div class="resources-grid">
+      <div class="res-card">
+        <div class="res-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5c2-1 5-1 8 0v14c-3-1-6-1-8 0zM20 5c-2-1-5-1-8 0v14c3-1 6-1 8 0z"/></svg></div>
+        <h4>Fundraising Guide</h4>
+        <p>A step-by-step guide to raising capital for your startup.</p>
+        <a href="#" class="dl">Download Now →</a>
+      </div>
+      <div class="res-card">
+        <div class="res-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <h4>Pitch Deck Template</h4>
+        <p>Investor-ready pitch deck template to tell your story.</p>
+        <a href="#" class="dl">Download Now →</a>
+      </div>
+      <div class="res-card">
+        <div class="res-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
+        <h4>Valuation Basics</h4>
+        <p>Understand startup valuation methods and key factors.</p>
+        <a href="#" class="dl">Download Now →</a>
+      </div>
+      <div class="res-card cta-card">
+        <h4>Not Sure Where to Start?</h4>
+        <p>Let's assess your fundraising readiness and chart the right path forward.</p>
+        <a href="#" class="btn-solid">Schedule a Free Consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="eyebrow">What Founders Say</div>
+    <div class="testi-wrap">
+      <button class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="quote-mark">“</div>
+          <p class="qt">Alaka Consulting Group was instrumental in helping us raise our Series A. Their investor connect and negotiation support were unmatched.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop" alt="Rohit B.">
+            <div><b>Rohit B.</b><span>CEO, FinTech Startup</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="quote-mark">“</div>
+          <p class="qt">Their strategic approach and deep understanding of investor expectations helped us close our round at a great valuation.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop" alt="Meera S.">
+            <div><b>Meera S.</b><span>Co-Founder, SaaS Company</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="quote-mark">“</div>
+          <p class="qt">From refining our pitch to closing the deal, Alaka was with us at every step. Truly a growth partner.</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=200&auto=format&fit=crop" alt="Ankit T.">
+            <div><b>Ankit T.</b><span>Founder, HealthTech Startup</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-inner">
+    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1600&auto=format&fit=crop" alt="Suspension bridge skyline at dusk">
+    <div class="cta-content">
+      <div class="eyebrow">Ready To Raise?</div>
+      <h2>Let's Build What's Next. Together.</h2>
+      <p>Partner with us to raise capital and create lasting impact.</p>
+      <a href="#" class="btn-solid">Get in Touch →</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
