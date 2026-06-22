@@ -6,6 +6,7 @@
 <title>Alaka Consulting Group | For Investors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
   :root{
     --black: #0a0908;
@@ -17,14 +18,6 @@
     --gray: #b9b4a9;
     --gray-dim: #8a857a;
     --line: rgba(214,161,60,0.25);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:'Jost', sans-serif;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
     font-family:'Cormorant Garamond', serif;
@@ -43,38 +36,6 @@
     margin-bottom:14px;
   }
   .eyebrow.center{text-align:center;}
-
-  /* ===== HEADER ===== */
-  header{border-bottom:1px solid rgba(255,255,255,0.06);background:var(--black);position:relative;z-index:50;}
-  .nav-wrap{max-width:1240px;margin:0 auto;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;}
-  .logo{display:flex;align-items:center;gap:14px;}
-  .logo .mark{font-family:'Cormorant Garamond', serif;font-size:34px;font-weight:600;color:var(--gold);line-height:1;}
-  .logo .word{display:flex;flex-direction:column;line-height:1.05;}
-  .logo .word b{font-family:'Jost', sans-serif;font-size:20px;font-weight:500;letter-spacing:3px;color:var(--cream);}
-  .logo .word span{font-size:9.5px;letter-spacing:2.5px;color:var(--gray-dim);margin-top:2px;}
-  nav ul{list-style:none;display:flex;gap:34px;}
-  nav a{font-size:12.5px;letter-spacing:1.3px;color:var(--gray);text-transform:uppercase;padding-bottom:6px;position:relative;transition:color .2s ease;}
-  nav a:hover{color:var(--cream);}
-  nav a.active{color:var(--gold);border-bottom:1.5px solid var(--gold);}
-  .nav-right{display:flex;align-items:center;gap:34px;}
-  .btn-outline{
-    border:1px solid var(--gold);color:var(--gold);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;
-    padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;white-space:nowrap;
-    background:transparent;cursor:pointer;font-family:'Jost', sans-serif;
-  }
-  .btn-outline:hover{background:var(--gold);color:var(--black);}
-  .btn-outline-light{
-    border:1px solid rgba(255,255,255,0.35);color:var(--cream);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;
-    padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;
-  }
-  .btn-outline-light:hover{border-color:var(--gold);color:var(--gold);}
-  .btn-solid{
-    background:linear-gradient(135deg, var(--gold-light), var(--gold));color:var(--black);font-size:11.5px;letter-spacing:1.5px;
-    text-transform:uppercase;font-weight:500;padding:14px 28px;display:inline-flex;align-items:center;gap:8px;border:none;
-    cursor:pointer;transition:filter .2s ease;white-space:nowrap;
-  }
-  .btn-solid:hover{filter:brightness(1.08);}
-
   /* ===== HERO ===== */
   .hero{display:grid;grid-template-columns:1fr 1.05fr;}
   .hero-left{padding:60px 48px;display:flex;flex-direction:column;justify-content:center;max-width:560px;}
@@ -90,18 +51,15 @@
   .hf-icon{width:38px;height:38px;color:var(--gold);}
   .hf-icon svg{width:32px;height:32px;}
   .hf p{font-size:11.5px;line-height:1.6;color:var(--gray-dim);margin:0;}
-
   .hero-right{position:relative;overflow:hidden;min-height:480px;}
   .hero-right img{width:100%;height:100%;object-fit:cover;}
   .hero-right .mono{position:absolute;top:32px;right:32px;font-family:'Cormorant Garamond', serif;font-size:54px;font-weight:600;color:rgba(214,161,60,0.6);z-index:2;}
   .hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,9,8,0.5) 0%, rgba(10,9,8,0) 30%);}
-
   /* ===== SECTION COMMON ===== */
   .section{padding:88px 0;}
   .section-head{text-align:center;margin-bottom:50px;}
   .section-head h2{font-size:32px;color:var(--cream);}
   .section-head .rule{margin:18px auto 0;}
-
   /* ===== WHY PARTNER 4-CARD ===== */
   .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);}
   .why-card{background:var(--black);padding:42px 30px;text-align:center;transition:background .25s ease;}
@@ -113,7 +71,6 @@
   .why-icon svg{width:24px;height:24px;}
   .why-card h3{font-size:18px;color:var(--cream);margin-bottom:12px;font-weight:500;}
   .why-card p{font-size:12.5px;line-height:1.75;color:var(--gray);}
-
   /* ===== SERVICES 5-CARD ===== */
   .grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);}
   .svc-card{background:var(--black);padding:36px 24px;text-align:center;}
@@ -125,7 +82,6 @@
   .svc-icon svg{width:22px;height:22px;}
   .svc-card h4{font-size:16px;color:var(--cream);margin-bottom:10px;font-weight:500;}
   .svc-card p{font-size:12px;line-height:1.7;color:var(--gray-dim);}
-
   /* ===== DEAL FLOW SNAPSHOT ===== */
   .snapshot{border:1px solid rgba(255,255,255,0.08);background:var(--panel);padding:44px 40px;}
   .snapshot-head{text-align:center;margin-bottom:34px;}
@@ -136,7 +92,6 @@
   .snap-icon svg{width:26px;height:26px;}
   .snap-item h3{font-size:22px;color:var(--cream);font-weight:600;line-height:1.1;}
   .snap-item span{display:block;font-size:11px;color:var(--gray-dim);margin-top:4px;line-height:1.4;}
-
   /* ===== PARTNERS ===== */
   .partners-row{display:grid;grid-template-columns:repeat(6,1fr);text-align:center;}
   .partner-item{display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 16px;border-right:1px solid rgba(255,255,255,0.07);}
@@ -144,7 +99,6 @@
   .partner-icon{color:var(--gold);}
   .partner-icon svg{width:34px;height:34px;}
   .partner-item span{font-size:12.5px;color:var(--gray);}
-
   /* ===== TESTIMONIAL SINGLE ===== */
   .testi-single{display:flex;align-items:center;gap:28px;max-width:920px;margin:0 auto;}
   .testi-single .arrow-btn{
@@ -160,7 +114,6 @@
   .dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
   .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);}
   .dot.active{background:var(--gold);}
-
   /* ===== FINAL CTA ===== */
   .final-cta{
     position:relative;
@@ -185,8 +138,6 @@
   }
   .final-cta-text h2{font-size:30px;color:var(--cream);margin-bottom:10px;}
   .final-cta-text p{font-size:13.5px;color:var(--gray);max-width:420px;line-height:1.7;}
-  .final-cta .btn-solid{flex-shrink:0;position:relative;z-index:1;}
-
   @media(max-width:980px){
     .hero{grid-template-columns:1fr;}
     .hero-features{grid-template-columns:repeat(2,1fr);}
@@ -203,30 +154,31 @@
 </head>
 <body>
 
-<header>
-  <div class="nav-wrap">
-    <div class="logo">
-      <span class="mark">AG</span>
-      <div class="word">
-        <b>ALAKA</b>
-        <span>CONSULTING GROUP</span>
-      </div>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">
+      <img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="servicehtml.html">Services</a></li>
-        <li><a href="startups.html">For Startups</a></li>
-        <li><a href="investors.html" class="active">For Investors</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-right">
-      <a href="#" class="btn-outline">Get in Touch</a>
+    <div class="logo-text">
+      <div class="top">Alaka</div>
+      <div class="sub">Consulting Group</div>
     </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="startups.html">For Startups</a>
+    <a href="investors.html" class="active">For Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="about_us.html">About Us</a>
   </div>
-</header>
+  <a href="contact.html" class="nav-cta">Get In Touch</a>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
 
 <section class="hero">
   <div class="hero-left">
@@ -253,7 +205,7 @@
         <p>Long-Term Partnership Approach</p>
       </div>
       <div class="hf">
-        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 19h18M5 19v-6m5 6v-9m5 9v-4m5 4V8"/></svg></div>
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 19h18M5 19v-6m5 6v-9m5 11v- que 4m5 6V8"/></svg></div>
         <p>Actionable Insights, Stronger Returns</p>
       </div>
     </div>
@@ -390,7 +342,7 @@
         <span>Corporate Investors</span>
       </div>
       <div class="partner-item">
-        <div class="partner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="7" r="3"/><path d="M4 11c2-1.5 4-1.5 4 1v3M20 11c-2-1.5-4-1.5-4 1v3M9 21v-5a3 3 0 016 0v5"/></svg></div>
+        <div class="partner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy la-7" r="3"/><path d="M4 11c2-1.5 4-1.5 4 1v3M20 11c-2-1.5-4-1.5-4 1v3M9 21v-5a3 3 0 016 0v5"/></svg></div>
         <span>Angel Investors</span>
       </div>
       <div class="partner-item">
@@ -433,5 +385,19 @@
   </div>
 </section>
 
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
+</script>
 </body>
 </html>
