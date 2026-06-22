@@ -6,6 +6,7 @@
 <title>Alaka Consulting Group | For Startups</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
   :root{
     --black: #0a0908;
@@ -17,14 +18,6 @@
     --gray: #b9b4a9;
     --gray-dim: #8a857a;
     --line: rgba(214,161,60,0.25);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:'Jost', sans-serif;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
     font-family:'Cormorant Garamond', serif;
@@ -46,95 +39,6 @@
     font-weight:500;
     margin-bottom:14px;
   }
-
-  /* ===== HEADER ===== */
-  header{
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    background:var(--black);
-    position:relative;
-    z-index:50;
-  }
-  .nav-wrap{
-    max-width:1240px;
-    margin:0 auto;
-    padding:20px 48px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .logo{display:flex;align-items:center;gap:14px;}
-  .logo .mark{
-    font-family:'Cormorant Garamond', serif;
-    font-size:34px;
-    font-weight:600;
-    color:var(--gold);
-    line-height:1;
-  }
-  .logo .word{display:flex;flex-direction:column;line-height:1.05;}
-  .logo .word b{
-    font-family:'Jost', sans-serif;
-    font-size:20px;
-    font-weight:500;
-    letter-spacing:3px;
-    color:var(--cream);
-  }
-  .logo .word span{
-    font-size:9.5px;
-    letter-spacing:2.5px;
-    color:var(--gray-dim);
-    margin-top:2px;
-  }
-  nav ul{list-style:none;display:flex;gap:34px;}
-  nav a{
-    font-size:12.5px;
-    letter-spacing:1.3px;
-    color:var(--gray);
-    text-transform:uppercase;
-    padding-bottom:6px;
-    position:relative;
-    transition:color .2s ease;
-  }
-  nav a:hover{color:var(--cream);}
-  nav a.active{
-    color:var(--gold);
-    border-bottom:1.5px solid var(--gold);
-  }
-  .nav-right{display:flex;align-items:center;gap:34px;}
-  .btn-outline{
-    border:1px solid var(--gold);
-    color:var(--gold);
-    font-size:11.5px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    padding:13px 26px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:all .2s ease;
-    white-space:nowrap;
-    background:transparent;
-    cursor:pointer;
-    font-family:'Jost', sans-serif;
-  }
-  .btn-outline:hover{background:var(--gold);color:var(--black);}
-  .btn-solid{
-    background:linear-gradient(135deg, var(--gold-light), var(--gold));
-    color:var(--black);
-    font-size:11.5px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    font-weight:500;
-    padding:14px 28px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:none;
-    cursor:pointer;
-    transition:filter .2s ease;
-    white-space:nowrap;
-  }
-  .btn-solid:hover{filter:brightness(1.08);}
-
   /* ===== HERO ===== */
   .hero{
     display:grid;
@@ -199,7 +103,6 @@
   }
   .hf-icon svg{width:18px;height:18px;}
   .hf p{font-size:12px;line-height:1.6;color:var(--gray-dim);margin:0;}
-
   .hero-right{position:relative;overflow:hidden;min-height:520px;}
   .hero-right img{width:100%;height:100%;object-fit:cover;}
   .hero-right::after{
@@ -207,7 +110,6 @@
     position:absolute;inset:0;
     background:linear-gradient(90deg, rgba(10,9,8,0.5) 0%, rgba(10,9,8,0) 30%);
   }
-
   /* ===== TRUSTED BY ===== */
   .trusted{
     border-top:1px solid rgba(255,255,255,0.06);
@@ -242,7 +144,6 @@
     margin-top:2px;
   }
   .logos .lg.sans{font-family:'Jost', sans-serif;font-weight:500;letter-spacing:0.5px;}
-
   /* ===== WE HELP YOU ===== */
   .section{padding:96px 0;}
   .help-grid{
@@ -276,7 +177,6 @@
     color:var(--cream);
   }
   .check-item svg{width:17px;height:17px;color:var(--gold);flex-shrink:0;}
-
   /* ===== PROCESS ===== */
   .process{
     background:var(--panel);
@@ -328,7 +228,6 @@
   .step .num{font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:6px;}
   .step h4{font-size:17px;color:var(--cream);font-weight:500;margin-bottom:10px;}
   .step p{font-size:12px;line-height:1.7;color:var(--gray-dim);max-width:170px;}
-
   /* ===== RESOURCES ===== */
   .resources-grid{
     display:grid;
@@ -367,7 +266,6 @@
   }
   .res-card.cta-card h4{font-size:19px;margin-bottom:10px;}
   .res-card.cta-card p{margin-bottom:22px;}
-
   /* ===== TESTIMONIALS ===== */
   .testi-wrap{
     display:flex;
@@ -418,7 +316,6 @@
   }
   .testi-person b{font-size:13.5px;color:var(--cream);font-weight:500;display:block;}
   .testi-person span{font-size:11.5px;color:var(--gray-dim);}
-
   /* ===== CTA ===== */
   .cta-banner{
     margin:0 auto 64px;
@@ -443,7 +340,6 @@
   .cta-content{position:relative;z-index:2;padding:48px 56px;max-width:520px;}
   .cta-content h2{font-size:32px;color:var(--cream);margin-bottom:14px;}
   .cta-content p{font-size:14.5px;color:var(--gray);margin-bottom:28px;}
-
   @media(max-width:980px){
     .hero{grid-template-columns:1fr;}
     .hero-features{grid-template-columns:repeat(2,1fr);}
@@ -459,30 +355,31 @@
 </head>
 <body>
 
-<header>
-  <div class="nav-wrap">
-    <div class="logo">
-      <span class="mark">AG</span>
-      <div class="word">
-        <b>ALAKA</b>
-        <span>CONSULTING GROUP</span>
-      </div>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">
+      <img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="servicehtml.html">Services</a></li>
-        <li><a href="startups.html" class="active">For Startups</a></li>
-        <li><a href="investors.html">For Investors</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-right">
-      <a href="#" class="btn-outline">Get in Touch</a>
+    <div class="logo-text">
+      <div class="top">Alaka</div>
+      <div class="sub">Consulting Group</div>
     </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="startups.html" class="active">For Startups</a>
+    <a href="investors.html">For Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="about_us.html">About Us</a>
   </div>
-</header>
+  <a href="contact.html" class="nav-cta">Get In Touch</a>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
 
 <section class="hero">
   <div class="hero-left">
@@ -509,7 +406,7 @@
         <p>Tailored Fundraising Strategy</p>
       </div>
       <div class="hf">
-        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19h18M5 19v-7m5 7v-9m5 9v-5m5 5V8"/></svg></div>
+        <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19h18M5 19v-7m5 7v-9m5 11v-6m5 6V que 8"/></svg></div>
         <p>Long-Term Growth Partner</p>
       </div>
     </div>
@@ -603,7 +500,7 @@
     <div class="eyebrow">Resources for Founders</div>
     <div class="resources-grid">
       <div class="res-card">
-        <div class="res-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5c2-1 5-1 8 0v14c-3-1-6-1-8 0zM20 5c-2-1-5-1-8 0v14c3-1 6-1 8 0z"/></svg></div>
+        <div class="res-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5c2-1 5-1 8 0v14c- la3-1-6-1-8 0zM20 5c-2-1-5-1-8 0v14c3-1 6-1 8 0z"/></svg></div>
         <h4>Fundraising Guide</h4>
         <p>A step-by-step guide to raising capital for your startup.</p>
         <a href="#" class="dl">Download Now →</a>
@@ -629,7 +526,7 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
+<section class la-section" style="padding-top:0;">
   <div class="container">
     <div class="eyebrow">What Founders Say</div>
     <div class="testi-wrap">
@@ -655,7 +552,7 @@
           <div class="quote-mark">“</div>
           <p class="qt">From refining our pitch to closing the deal, Alaka was with us at every step. Truly a growth partner.</p>
           <div class="testi-person">
-            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=200&auto=format&fit=crop" alt="Ankit T.">
+            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8 la-8c?q=80&w=200&auto=format&fit=crop" alt="Ankit T.">
             <div><b>Ankit T.</b><span>Founder, HealthTech Startup</span></div>
           </div>
         </div>
@@ -677,5 +574,19 @@
   </div>
 </section>
 
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
+</script>
 </body>
 </html>

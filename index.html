@@ -6,129 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alaka Consulting Group</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-    }
-
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2.5rem;
-      background: #0d0d0d;
-      border-bottom: 0.5px solid #2a2a2a;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      border: 1.5px solid #c9a84c;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #c9a84c;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    .logo-text .top {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    .logo-text .sub {
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      color: #c9a84c;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      color: #bbb;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #fff;
-    }
-
-    .nav-links a.active {
-      border-bottom: 1.5px solid #c9a84c;
-      padding-bottom: 2px;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 20px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 30;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: #c9a84c;
-      transition: all 0.3s ease;
-    }
-
-    .nav-cta {
-      border: 1.5px solid #c9a84c;
-      background: transparent;
-      color: #c9a84c;
-      padding: 8px 20px;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: inherit;
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    .nav-cta:hover {
-      background: #c9a84c;
-      color: #0d0d0d;
-    }
-
-    /* HERO */
+    /* Page-specific styles */
     .hero-stats-wrapper {
       position: relative;
       z-index: 1;
@@ -566,39 +446,6 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        display: flex;
-        position: fixed;
-        top: 72px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 72px);
-        background: #0d0d0d;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transition: right 0.3s ease-in-out;
-        z-index: 25;
-        border-top: 0.5px solid #2a2a2a;
-      }
-
-      .nav-links.nav-open {
-        right: 0;
-      }
-
-      .nav-links a {
-        font-size: 16px;
-      }
-
       .hero {
         padding: 3rem 1.5rem 1.5rem;
       }
@@ -693,9 +540,10 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="index.html" class="nav-logo" style="text-decoration: none; color: inherit;">
-      <div class="logo-icon"><img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo"
-          style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;"></div>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo">
+      </div>
       <div class="logo-text">
         <div class="top">Alaka</div>
         <div class="sub">Consulting Group</div>
@@ -703,16 +551,13 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="about_us.html">About Us</a>
       <a href="services.html">Services</a>
       <a href="startups.html">For Startups</a>
       <a href="investors.html">For Investors</a>
-      <a href="case_studies.html">Case Studies</a>
-      <a href="resources.html">Resources</a>
       <a href="contact.html">Contact</a>
+      <a href="about_us.html">About Us</a>
     </div>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in
-      touch</button>
+    <a href="contact.html" class="nav-cta">Get In Touch</a>
     <button class="nav-toggle" aria-label="Menu">
       <span></span>
       <span></span>

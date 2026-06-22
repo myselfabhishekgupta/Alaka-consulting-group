@@ -6,6 +6,7 @@
 <title>Alaka Consulting Group | Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
   :root{
     --black: #0a0908;
@@ -17,14 +18,6 @@
     --gray: #b9b4a9;
     --gray-dim: #8a857a;
     --line: rgba(214,161,60,0.25);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:'Jost', sans-serif;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
     font-family:'Cormorant Garamond', serif;
@@ -45,103 +38,6 @@
     font-weight:500;
     margin-bottom:14px;
   }
-
-  /* ===== HEADER ===== */
-  header{
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    background:var(--black);
-    position:relative;
-    z-index:50;
-  }
-  .nav-wrap{
-    max-width:1240px;
-    margin:0 auto;
-    padding:20px 48px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-  }
-  .logo .mark{
-    font-family:'Cormorant Garamond', serif;
-    font-size:34px;
-    font-weight:600;
-    color:var(--gold);
-    line-height:1;
-  }
-  .logo .word{
-    display:flex;
-    flex-direction:column;
-    line-height:1.05;
-  }
-  .logo .word b{
-    font-family:'Jost', sans-serif;
-    font-size:20px;
-    font-weight:500;
-    letter-spacing:3px;
-    color:var(--cream);
-  }
-  .logo .word span{
-    font-size:9.5px;
-    letter-spacing:2.5px;
-    color:var(--gray-dim);
-    margin-top:2px;
-  }
-  nav ul{
-    list-style:none;
-    display:flex;
-    gap:34px;
-  }
-  nav a{
-    font-size:12.5px;
-    letter-spacing:1.3px;
-    color:var(--gray);
-    text-transform:uppercase;
-    padding-bottom:6px;
-    position:relative;
-    transition:color .2s ease;
-  }
-  nav a:hover{color:var(--cream);}
-  nav a.active{
-    color:var(--gold);
-    border-bottom:1.5px solid var(--gold);
-  }
-  .nav-right{display:flex;align-items:center;gap:34px;}
-  .btn-outline{
-    border:1px solid var(--gold);
-    color:var(--gold);
-    font-size:11.5px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    padding:13px 26px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:all .2s ease;
-    white-space:nowrap;
-  }
-  .btn-outline:hover{background:var(--gold);color:var(--black);}
-  .btn-solid{
-    background:linear-gradient(135deg, var(--gold-light), var(--gold));
-    color:var(--black);
-    font-size:11.5px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    font-weight:500;
-    padding:14px 28px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:none;
-    cursor:pointer;
-    transition:filter .2s ease;
-  }
-  .btn-solid:hover{filter:brightness(1.08);}
-
   /* ===== HERO ===== */
   .hero{
     display:grid;
@@ -211,7 +107,6 @@
     inset:0;
     background:linear-gradient(90deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 35%);
   }
-
   /* ===== STATS ===== */
   .stats{
     border-top:1px solid rgba(255,255,255,0.06);
@@ -253,7 +148,6 @@
     letter-spacing:0.4px;
     margin-top:4px;
   }
-
   /* ===== WHAT WE DO ===== */
   .section{
     padding:96px 0;
@@ -321,7 +215,6 @@
     align-items:center;
     gap:6px;
   }
-
   /* ===== PROCESS ===== */
   .process{
     padding:96px 0 80px;
@@ -389,7 +282,6 @@
     color:var(--gray-dim);
     max-width:180px;
   }
-
   /* ===== CTA ===== */
   .cta-banner{
     position:relative;
@@ -435,7 +327,6 @@
     color:var(--gray);
     margin-bottom:28px;
   }
-
   @media(max-width:980px){
     .hero{grid-template-columns:1fr;}
     .hero-right{min-height:340px;}
@@ -445,36 +336,36 @@
     .what-head{flex-direction:column;align-items:flex-start;}
     .steps{flex-direction:column;gap:36px;}
     .step::before{display:none;}
-    nav{display:none;}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="nav-wrap">
-    <div class="logo">
-      <span class="mark">AG</span>
-      <div class="word">
-        <b>ALAKA</b>
-        <span>CONSULTING GROUP</span>
-      </div>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">
+      <img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="servicehtml.html" class="active">Services</a></li>
-        <li><a href="startups.html">For Startups</a></li>
-        <li><a href="investors.html">For Investors</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-right">
-      <a href="#" class="btn-outline">Get in Touch</a>
+    <div class="logo-text">
+      <div class="top">Alaka</div>
+      <div class="sub">Consulting Group</div>
     </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="startups.html">For Startups</a>
+    <a href="investors.html">For Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="about_us.html">About Us</a>
   </div>
-</header>
+  <a href="contact.html" class="nav-cta">Get In Touch</a>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
 
 <section class="hero">
   <div class="hero-left">
@@ -506,11 +397,11 @@
       <div><h3>120+</h3><span>Investors Network</span></div>
     </div>
     <div class="stat">
-      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18M5 20V12m5 8V8m5 12v-6m5 6V5"/></svg></div>
+      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18M5 20V12m5 8V9m5 11v-6m5 6V5"/></svg></div>
       <div><h3>25+</h3><span>Industries Served</span></div>
     </div>
     <div class="stat">
-      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg></div>
+      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg></div>
       <div><h3>20+</h3><span>Countries Reached</span></div>
     </div>
   </div>
@@ -620,5 +511,19 @@
   </div>
 </section>
 
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
+</script>
 </body>
 </html>
