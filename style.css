@@ -83,6 +83,48 @@ nav {
   align-items: center;
 }
 
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.footer-logo-mark {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.footer-logo-text span:first-child {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.footer-logo-text span:last-child {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
 .nav-links a {
   font-size: 13px;
   color: #bbb;
