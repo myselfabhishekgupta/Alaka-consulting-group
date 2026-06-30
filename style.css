@@ -197,10 +197,10 @@ nav {
   .nav-links {
     display: flex;
     position: fixed;
-    top: 72px;
+    top: 64px; /* Adjusted to match nav height better */
     right: -100%;
     width: 100%;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 64px);
     background: #0d0d0d;
     flex-direction: column;
     justify-content: center;
@@ -216,11 +216,11 @@ nav {
   }
 
   .nav-links a {
-    font-size: 16px;
+    font-size: 18px; /* Slightly larger for better mobile accessibility */
   }
 
   .nav-cta {
-    display: none;
+    display: none; /* Hidden in mobile nav to keep it clean, using the toggle instead */
   }
 }
 
