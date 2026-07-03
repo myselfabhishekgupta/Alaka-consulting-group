@@ -549,20 +549,23 @@
         <div class="sub">Consulting Group</div>
       </div>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="startups.html">For Startups</a>
       <a href="investors.html">For Investors</a>
       <a href="contact.html">Contact Us</a>
       <a href="about.html">About Us</a>
-      <a href="https://forms.gle/SG41uJaHyWQx4Vf59" target="_blank" class="nav-cta">Get In Touch</a>
+      <a href="https://forms.gle/SG41uJaHyWQx4Vf59" target="_blank" class="nav-cta nav-cta-mobile">Get In Touch</a>
     </div>
-    <button class="nav-toggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav-actions">
+      <a href="https://forms.gle/SG41uJaHyWQx4Vf59" target="_blank" class="nav-cta nav-cta-desktop">Get In Touch</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO AND STATS WRAPPER -->
@@ -706,18 +709,35 @@
   </footer>
 
   <script>
+    const siteNav = document.querySelector('nav');
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    function closeNav() {
+      navLinks.classList.remove('nav-open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-lock');
+    }
+
     navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-open');
+      const isOpen = navLinks.classList.toggle('nav-open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-lock', isOpen);
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('nav-open');
-      });
+      link.addEventListener('click', closeNav);
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
   </script>
 </body>
 
