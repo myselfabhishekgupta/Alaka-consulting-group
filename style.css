@@ -248,11 +248,17 @@ body.nav-lock {
 
 @media (max-width: 768px) {
   nav {
+    display: flex;
+    justify-content: space-between;
     padding: 1rem;
   }
 
   .nav-toggle {
     display: flex;
+  }
+
+  .nav-actions {
+    justify-self: unset;
   }
 
   .nav-links {

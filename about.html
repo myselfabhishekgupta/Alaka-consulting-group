@@ -135,6 +135,21 @@
     .values-grid{grid-template-columns:1fr 1fr;}
     .cta-inner{flex-direction:column;align-items:flex-start;}
   }
+
+  @media(max-width:640px){
+    .container{padding:0 20px;}
+    .hero-left{padding:48px 24px;}
+    .who-left{padding:48px 24px;}
+    .who-right{padding:32px 24px;grid-template-columns:1fr 1fr;}
+    .apart-grid{grid-template-columns:1fr 1fr;}
+    .values-grid{grid-template-columns:1fr;}
+    .leader-card{grid-template-columns:1fr;}
+    .leader-img{height:220px;}
+    .leader-info{padding:28px 24px;border-left:none;border-top:1px solid rgba(255,255,255,0.08);}
+    .cta-inner{padding:40px 24px;}
+    .cta-left{flex-direction:column;align-items:flex-start;gap:16px;}
+    .footer-top-grid{grid-template-columns:1fr !important;gap:32px !important;}
+  }
 </style>
 </head>
 <body>
@@ -418,7 +433,7 @@
   <div style="max-width:1240px;margin:0 auto;padding:56px 48px 32px;">
 
     <!-- Top Row -->
-    <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.07);">
+    <div class="footer-top-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.07);">
 
       <!-- Brand -->
       <div>
