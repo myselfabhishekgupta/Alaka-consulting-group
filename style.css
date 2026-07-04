@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --gold: #C9952A;
   --gold-light: #E4B84A;
