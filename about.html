@@ -520,19 +520,32 @@
     const siteNav = document.querySelector('nav');
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+    let lockedScrollY = 0;
+
+    function openNav() {
+      lockedScrollY = window.scrollY;
+      navLinks.classList.add('nav-open');
+      navToggle.classList.add('active');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.top = `-${lockedScrollY}px`;
+      document.body.classList.add('nav-lock');
+    }
 
     function closeNav() {
       navLinks.classList.remove('nav-open');
       navToggle.classList.remove('active');
       navToggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('nav-lock');
+      document.body.style.top = '';
+      window.scrollTo(0, lockedScrollY);
     }
 
     navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('nav-open');
-      navToggle.classList.toggle('active', isOpen);
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.classList.toggle('nav-lock', isOpen);
+      if (navLinks.classList.contains('nav-open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
