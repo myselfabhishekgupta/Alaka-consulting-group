@@ -370,6 +370,7 @@
     }
 
     .contact-form input,
+    .contact-form select,
     .contact-form textarea {
       width: 100%;
       padding: 12px 16px;
@@ -380,6 +381,19 @@
       font-family: inherit;
       border-radius: 2px;
       outline: none;
+      appearance: none;
+    }
+
+    .contact-form select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .contact-form select:invalid {
+      color: #555;
     }
 
     .contact-form input::placeholder,
@@ -388,6 +402,7 @@
     }
 
     .contact-form input:focus,
+    .contact-form select:focus,
     .contact-form textarea:focus {
       border-color: #c9a84c;
     }
@@ -408,10 +423,22 @@
       text-transform: uppercase;
       font-family: inherit;
       font-weight: 600;
+      transition: background 0.2s;
     }
 
     .contact-form button:hover {
       background: #e0bc60;
+    }
+
+    .contact-form button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      font-size: 13px;
+      min-height: 18px;
+      margin: 0;
     }
 
     /* FOOTER */
@@ -699,14 +726,24 @@
   <section class="contact-section" id="contact">
     <h2>Ready to raise your <span>next round?</span></h2>
     <p>Talk to our team and find out how we can help you achieve your capital goals.</p>
-    <div class="contact-form">
-      <input type="text" placeholder="Your name" />
-      <input type="text" placeholder="Company name" />
-      <input type="email" placeholder="Email address" />
-      <input type="tel" placeholder="Phone number" />
-      <textarea placeholder="Tell us about your business and funding needs"></textarea>
-      <button>Send message →</button>
-    </div>
+    <form class="contact-form" id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe_4b3Tm-IzAE9lOV8yJGFpjv895ricwCLR3Unv0uWYEidr7A/formResponse">
+      <input type="text" name="entry.916959167" placeholder="Your name" required />
+      <input type="text" name="entry.515407735" placeholder="Company name" />
+      <input type="email" name="entry.760758933" placeholder="Email address" required />
+      <input type="tel" name="entry.1559086790" placeholder="Phone number" />
+      <select name="entry.871134388" required>
+        <option value="" disabled selected>I'm reaching out about…</option>
+        <option value="Fundraising Advisory">Fundraising Advisory</option>
+        <option value="Investor Connect">Investor Connect</option>
+        <option value="Financial Modeling">Financial Modeling</option>
+        <option value="Pitch Deck Advisory">Pitch Deck Advisory</option>
+        <option value="Valuation Support">Valuation Support</option>
+        <option value="General Inquiry">General Inquiry</option>
+      </select>
+      <textarea name="entry.1130127289" placeholder="Tell us about your business and funding needs"></textarea>
+      <button type="submit">Send message →</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
   </section>
 
 <!-- FOOTER -->
@@ -838,6 +875,32 @@
     window.addEventListener('scroll', () => {
       siteNav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = contactForm.querySelector('.form-status');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      formStatus.textContent = 'Sending…';
+      formStatus.style.color = '#888';
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new FormData(contactForm)
+      }).then(() => {
+        formStatus.textContent = "Thanks! Your message has been sent — we'll be in touch soon.";
+        formStatus.style.color = '#8fd18f';
+        contactForm.reset();
+      }).catch(() => {
+        formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+        formStatus.style.color = '#e0807a';
+      }).finally(() => {
+        submitBtn.disabled = false;
+      });
+    });
   </script>
 </body>
 
