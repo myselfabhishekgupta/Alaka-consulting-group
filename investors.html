@@ -136,6 +136,68 @@
   }
   .final-cta-text h2{font-size:30px;color:var(--cream);margin-bottom:10px;}
   .final-cta-text p{font-size:13.5px;color:var(--gray);max-width:420px;line-height:1.7;}
+
+  /* ===== CONTACT FORM ===== */
+  .contact-form-section{border-top:1px solid rgba(255,255,255,0.06);}
+  .contact-form-wrap{max-width:640px;margin:0 auto;text-align:center;}
+  .contact-form-wrap h2{font-size:32px;color:var(--cream);margin-bottom:12px;}
+  .contact-form-wrap > p{font-size:14px;color:var(--gray);margin-bottom:40px;}
+  .contact-form{display:flex;flex-direction:column;gap:14px;text-align:left;}
+  .contact-form input:not([type="checkbox"]),
+  .contact-form select{
+    width:100%;
+    padding:13px 16px;
+    background:var(--panel);
+    border:1px solid rgba(255,255,255,0.1);
+    color:var(--cream);
+    font-size:13.5px;
+    font-family:inherit;
+    outline:none;
+    appearance:none;
+  }
+  .contact-form select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a857a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    padding-right:40px;
+    cursor:pointer;
+  }
+  .contact-form select:invalid{color:var(--gray-dim);}
+  .contact-form input::placeholder{color:var(--gray-dim);}
+  .contact-form input:focus,
+  .contact-form select:focus{border-color:var(--gold);}
+  .contact-form .checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:12.5px;
+    color:var(--gray-dim);
+    line-height:1.6;
+  }
+  .contact-form .checkbox-row input{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+    margin-top:3px;
+    accent-color:var(--gold);
+    cursor:pointer;
+  }
+  .contact-form button{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:var(--black);
+    font-size:11.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-weight:500;
+    padding:14px 26px;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .contact-form button:hover{filter:brightness(1.08);}
+  .contact-form button:disabled{opacity:0.6;cursor:not-allowed;}
+  .form-status{font-size:13px;min-height:18px;margin:0;}
+
   @media(max-width:980px){
     .hero{grid-template-columns:1fr;}
     .hero-features{grid-template-columns:repeat(2,1fr);}
@@ -391,6 +453,46 @@
   </div>
 </section>
 
+<section class="section contact-form-section" id="get-started">
+  <div class="container">
+    <div class="contact-form-wrap">
+      <div class="eyebrow center">Get In Touch</div>
+      <h2>Register Your Interest</h2>
+      <p>Share a few details and our team will follow up with the right opportunities.</p>
+      <form class="contact-form" id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeEC8DkoCtUxHPCJ-dChh-WTa2_TZA9lzW1uItlDwggRuZ8AA/formResponse">
+        <input type="text" name="entry.801098813" placeholder="Full name" required />
+        <input type="text" name="entry.420773540" placeholder="Organization / Fund name" />
+        <input type="email" name="entry.864385912" placeholder="Email address" />
+        <select name="entry.500728915">
+          <option value="" disabled selected>Investor type…</option>
+          <option value="Angel Investor">Angel Investor</option>
+          <option value="Venture Capital (VC)">Venture Capital (VC)</option>
+          <option value="Family Office">Family Office</option>
+          <option value="High-Net-Worth Individual (HNI)">High-Net-Worth Individual (HNI)</option>
+          <option value="Corporate Venture Capital">Corporate Venture Capital</option>
+          <option value="Private Equity">Private Equity</option>
+          <option value="Other">Other</option>
+        </select>
+        <select name="entry.1430519659">
+          <option value="" disabled selected>Typical investment range…</option>
+          <option value="Under ₹25 Lakhs">Under ₹25 Lakhs</option>
+          <option value="₹25 Lakhs – ₹1 Crore">₹25 Lakhs – ₹1 Crore</option>
+          <option value="₹1 Crore – ₹5 Crore">₹1 Crore – ₹5 Crore</option>
+          <option value="₹5 Crore – ₹10 Crore">₹5 Crore – ₹10 Crore</option>
+          <option value="Above ₹10 Crore">Above ₹10 Crore</option>
+        </select>
+        <input type="text" name="entry.1751325177" placeholder="LinkedIn profile URL" />
+        <label class="checkbox-row">
+          <input type="checkbox" name="entry.876083743" value="." />
+          I agree to be contacted by Alaka Consulting Group regarding investment opportunities and acknowledge that the information provided is accurate.
+        </label>
+        <button type="submit" disabled>Submit →</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer style="background:#0d0c0a;border-top:1px solid rgba(255,255,255,0.07);">
   <div class="footer-wrap" style="max-width:1240px;margin:0 auto;padding:56px 48px 32px;">
@@ -520,6 +622,37 @@
   window.addEventListener('scroll', () => {
     siteNav.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
+
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = contactForm.querySelector('.form-status');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const consentCheckbox = contactForm.querySelector('[name="entry.876083743"]');
+
+  consentCheckbox.addEventListener('change', () => {
+    submitBtn.disabled = !consentCheckbox.checked;
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    formStatus.textContent = 'Sending…';
+    formStatus.style.color = '#8a857a';
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(contactForm)
+    }).then(() => {
+      formStatus.textContent = "Thanks! Your details have been submitted — we'll be in touch soon.";
+      formStatus.style.color = '#8fd18f';
+      contactForm.reset();
+    }).catch(() => {
+      formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+      formStatus.style.color = '#e0807a';
+    }).finally(() => {
+      submitBtn.disabled = !consentCheckbox.checked;
+    });
+  });
 </script>
 </body>
 </html>
