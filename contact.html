@@ -4,125 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact – Alaka Capital Group</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --gold: #C9952A;
-    --gold-light: #E4B84A;
-    --bg: #0A0A0A;
-    --surface: #111111;
-    --surface2: #181818;
-    --border: #242424;
-    --text: #E8E8E8;
-    --muted: #888888;
-    --white: #FFFFFF;
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F5F7FA;
+    --navy-primary: #0B1F3A;
+    --navy-corporate: #173F6B;
+    --gold-premium: #C69A3A;
+    --text-main: #172B45;
+    --text-secondary: #65748A;
+    --border-color: #E4EAF1;
   }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
-    color: var(--text);
+    background: #FFFFFF;
+    color: var(--text-main);
+    font-family: var(--font-body);
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
 
   /* BREADCRUMB */
-  .btn-outline {
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    background: transparent;
-    padding: 10px 22px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .btn-outline:hover {
-    background: var(--gold);
-    color: #000;
-  }
-
-  .btn-gold {
-    background: var(--gold);
-    color: #000;
-    border: none;
-    padding: 14px 28px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: background 0.2s, transform 0.15s;
-    text-decoration: none;
-  }
-
-  .btn-gold:hover {
-    background: var(--gold-light);
-    transform: translateY(-1px);
-  }
-
-  /* BREADCRUMB */
   .breadcrumb {
     padding: 16px 48px;
-    font-size: 11px;
+    font-size: 11.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--text-secondary);
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
   }
 
-  .breadcrumb a { color: var(--muted); text-decoration: none; }
-  .breadcrumb span { color: var(--gold); margin-left: 6px; }
+  .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--navy-primary); }
+  .breadcrumb span { color: var(--gold-premium); margin-left: 6px; font-weight: 600; }
 
   /* HERO */
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 440px;
+    min-height: 480px;
     overflow: hidden;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .hero-content {
-    padding: 60px 48px 60px;
+    padding: 64px 48px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: #FFFFFF;
   }
 
   .hero-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 400;
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 600;
     line-height: 1.15;
-    color: var(--white);
+    color: var(--navy-primary);
     margin-bottom: 4px;
   }
 
   .hero-content h1 span {
-    color: var(--gold);
+    color: var(--gold-premium);
     font-style: italic;
   }
 
   .gold-rule {
     width: 48px;
     height: 2px;
-    background: var(--gold);
+    background: var(--gold-premium);
     margin: 20px 0;
   }
 
   .hero-content p {
-    color: var(--muted);
-    font-size: 14px;
-    max-width: 380px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    max-width: 420px;
     line-height: 1.75;
     margin-bottom: 36px;
   }
@@ -130,7 +96,7 @@
   .contact-info-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
   }
 
   .contact-info-item {
@@ -140,9 +106,11 @@
   }
 
   .ci-icon {
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--border);
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,116 +118,109 @@
     margin-top: 2px;
   }
 
-  .ci-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+  .ci-icon svg { width: 16px; height: 16px; stroke: var(--gold-premium); fill: none; stroke-width: 2; }
 
   .ci-label {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-premium);
     font-weight: 600;
     margin-bottom: 2px;
   }
 
   .ci-value {
-    font-size: 14px;
-    color: var(--text);
+    font-size: 14.5px;
+    color: var(--navy-primary);
+    font-weight: 500;
   }
 
   .hero-image {
     position: relative;
     overflow: hidden;
+    background: var(--bg-secondary);
   }
 
   .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7) saturate(0.6);
   }
 
   .hero-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, var(--bg) 0%, transparent 30%);
-  }
-
-  .hero-image-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Playfair Display', serif;
-    font-size: 72px;
-    color: var(--gold);
-    opacity: 0.25;
-    letter-spacing: 8px;
-    pointer-events: none;
-    user-select: none;
+    background: linear-gradient(to right, rgba(255,255,255,0.4) 0%, rgba(11,31,58,0.2) 100%);
   }
 
   /* MAIN CONTENT GRID */
   .main-section {
-    padding: 64px 48px;
+    padding: 72px 48px;
     display: grid;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 440px;
     gap: 40px;
     align-items: start;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
   }
 
   /* FORM */
   .form-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
     padding: 44px;
+    box-shadow: 0 4px 20px rgba(11, 31, 58, 0.04);
   }
 
   .form-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 32px;
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--navy-primary);
+    margin-bottom: 28px;
   }
 
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
+    gap: 16px;
+    margin-bottom: 16px;
   }
 
   .form-field {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   input, select, textarea {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-main);
     padding: 13px 16px;
-    font-size: 13px;
-    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-family: var(--font-body);
+    border-radius: 3px;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
     appearance: none;
   }
 
   input::placeholder, textarea::placeholder {
-    color: var(--muted);
+    color: var(--text-secondary);
+    opacity: 0.75;
   }
 
   input:focus, select:focus, textarea:focus {
-    border-color: var(--gold);
+    border-color: var(--gold-premium);
+    box-shadow: 0 0 0 3px rgba(198, 154, 58, 0.15);
   }
 
   select {
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2365748A' stroke-width='2'%3E%3Cpath d='m6 9 l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
     padding-right: 40px;
@@ -274,31 +235,33 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 16px;
+    margin-top: 18px;
   }
 
-  .form-security svg { width: 13px; height: 13px; stroke: var(--muted); fill: none; stroke-width: 2; flex-shrink: 0; }
-  .form-security span { font-size: 11px; color: var(--muted); }
+  .form-security svg { width: 14px; height: 14px; stroke: var(--gold-premium); fill: none; stroke-width: 2; flex-shrink: 0; }
+  .form-security span { font-size: 12px; color: var(--text-secondary); }
 
   /* TEAM CARD */
   .team-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 36px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 38px;
+    box-shadow: 0 4px 20px rgba(11, 31, 58, 0.04);
   }
 
   .team-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy-primary);
     margin-bottom: 6px;
   }
 
   .team-card p.sub {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 28px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
   }
 
   .team-item {
@@ -306,8 +269,7 @@
     align-items: flex-start;
     gap: 16px;
     padding: 18px 0;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
     transition: background 0.15s;
     position: relative;
   }
@@ -317,14 +279,16 @@
   .team-icon {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  .team-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .team-icon svg { width: 18px; height: 18px; stroke: var(--gold-premium); fill: none; stroke-width: 1.6; }
 
   .team-info { flex: 1; }
 
@@ -332,251 +296,180 @@
     font-size: 11px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-premium);
     font-weight: 600;
     margin-bottom: 3px;
   }
 
   .team-email {
-    font-size: 13px;
-    color: var(--white);
+    font-size: 13.5px;
+    color: var(--navy-primary);
+    font-weight: 600;
     margin-bottom: 4px;
   }
 
   .team-desc {
     font-size: 12px;
-    color: var(--muted);
+    color: var(--text-secondary);
     line-height: 1.5;
   }
 
   .team-arrow {
-    color: var(--muted);
-    font-size: 16px;
+    color: var(--gold-premium);
+    font-size: 18px;
     align-self: center;
+    font-weight: 600;
   }
 
   /* OFFICES */
   .offices-section {
-    padding: 64px 48px;
-    border-top: 1px solid var(--border);
+    padding: 80px 48px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .offices-eyebrow {
     text-align: center;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
+    justify-content: center;
     margin-bottom: 12px;
   }
 
   .offices-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 400;
+    font-family: var(--font-heading);
+    font-size: 34px;
+    font-weight: 600;
     text-align: center;
-    color: var(--white);
+    color: var(--navy-primary);
     margin-bottom: 48px;
   }
 
   .offices-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1.4fr;
-    gap: 1px;
-    background: var(--border);
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    gap: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
   }
 
   .office-card {
-    background: var(--surface);
-    padding: 36px 32px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 36px 28px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    transition: all 0.25s ease;
+  }
+
+  .office-card:hover {
+    background: #FFFFFF;
+    border-color: var(--gold-premium);
+    box-shadow: 0 10px 24px rgba(11, 31, 58, 0.06);
+    transform: translateY(-3px);
   }
 
   .office-icon {
-    color: var(--gold);
+    color: var(--gold-premium);
     margin-bottom: 20px;
   }
 
-  .office-icon svg { width: 32px; height: 48px; fill: var(--gold); opacity: 0.85; }
+  .office-icon svg { width: 32px; height: 48px; }
 
   .office-city {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-primary);
     margin-bottom: 4px;
   }
 
   .office-type {
-    font-size: 10px;
+    font-size: 10.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-premium);
     font-weight: 600;
     margin-bottom: 16px;
   }
 
   .office-address {
-    font-size: 12px;
-    color: var(--muted);
+    font-size: 12.5px;
+    color: var(--text-secondary);
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    flex-grow: 1;
   }
 
   .office-phone {
-    font-size: 12px;
-    color: var(--text);
-    font-weight: 500;
-    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--navy-primary);
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
     padding-top: 16px;
     width: 100%;
   }
 
-  /* Map placeholder */
   .office-map {
-    background: var(--surface2);
-    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-  }
-
-  .world-map-svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-  }
-
-  .map-dots {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
     position: relative;
-    z-index: 1;
+    min-height: 240px;
+    box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04);
   }
 
-  .map-pin {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 0 4px rgba(201,149,42,0.2);
-    display: inline-block;
-  }
-
-  .map-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
-
-  /* CTA BANNER */
+  /* CTA BANNER (Selective Navy Background) */
   .cta-banner {
-    margin: 0 48px 64px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 48px 56px;
+    margin: 64px 48px 72px;
+    background: var(--navy-primary);
+    border-top: 3px solid var(--gold-premium);
+    border-radius: 6px;
+    padding: 52px 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-  }
-
-  .cta-banner::before {
-    content: '';
-    position: absolute;
-    right: -80px;
-    top: -80px;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,149,42,0.08) 0%, transparent 70%);
+    color: #FFFFFF;
+    box-shadow: 0 12px 32px rgba(11, 31, 58, 0.12);
   }
 
   .cta-banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 400;
-    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
     margin-bottom: 8px;
   }
 
   .cta-banner p {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 420px;
+    font-size: 14.5px;
+    color: #B9C5D6;
+    max-width: 440px;
+    line-height: 1.7;
   }
 
-  /* FOOTER */
-  footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 56px 48px 32px;
+  .cta-banner .btn-gold {
+    background: var(--gold-premium) !important;
+    color: var(--navy-primary) !important;
+    border-color: var(--gold-premium) !important;
+    box-shadow: 0 4px 14px rgba(198, 154, 58, 0.3) !important;
   }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 48px;
+  .cta-banner .btn-gold:hover {
+    background: var(--gold-hover) !important;
+    border-color: var(--gold-hover) !important;
+    color: #FFFFFF !important;
   }
-
-  .footer-brand p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.75;
-    margin-top: 18px;
-    max-width: 240px;
-  }
-
-  .footer-col h3 {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 10px; }
-  .footer-col ul a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 13px;
-    transition: color 0.2s;
-  }
-  .footer-col ul a:hover { color: var(--white); }
-
-  .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .footer-contact-item svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
-  .footer-contact-item span { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-  .footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-bottom p { font-size: 11px; color: var(--muted); }
-  .footer-bottom-links { display: flex; gap: 24px; }
-  .footer-bottom-links a { font-size: 11px; color: var(--muted); text-decoration: none; }
-  .footer-bottom-links a:hover { color: var(--white); }
 
   /* MOBILE RESPONSIVE */
+  @media (max-width: 980px) {
+    .offices-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   @media (max-width: 900px) {
     .breadcrumb { padding: 16px 20px; }
 
@@ -586,45 +479,22 @@
     }
 
     .hero-image { min-height: 280px; }
-
-    .hero-content { padding: 40px 20px; }
+    .hero-content { padding: 48px 24px; }
 
     .main-section {
       grid-template-columns: 1fr;
-      padding: 40px 20px;
+      padding: 48px 20px;
       gap: 32px;
     }
 
-    .form-card { padding: 28px 20px; }
-
+    .form-card { padding: 32px 24px; }
     .form-row { grid-template-columns: 1fr; }
+    .offices-section { padding: 56px 20px; }
+    .cta-banner { margin: 40px 20px 48px; padding: 40px 28px; flex-direction: column; align-items: flex-start; gap: 24px; }
+  }
 
-    .offices-section { padding: 48px 20px; }
-
+  @media (max-width: 600px) {
     .offices-grid { grid-template-columns: 1fr; }
-
-    .cta-banner {
-      margin: 0 20px 48px;
-      padding: 32px 24px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .footer-wrap {
-      padding: 40px 20px 24px !important;
-    }
-
-    .footer-top-grid {
-      grid-template-columns: 1fr !important;
-      gap: 32px !important;
-    }
-
-    .footer-bottom-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -643,7 +513,7 @@
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="logo-icon">
-      <img src="logo-templates/Alaka-logo.jpeg" alt="Alaka Logo">
+      <img src="logo-templates/acgpng.png" alt="Alaka Logo">
     </div>
     <div class="logo-text">
       <div class="top">Alaka</div>
@@ -899,73 +769,73 @@
 </div>
 
 <!-- FOOTER -->
-<footer style="background:#0d0c0a;border-top:1px solid rgba(255,255,255,0.07);">
+<footer style="background:#0B1F3A;border-top:1px solid rgba(228,234,241,0.12);">
   <div class="footer-wrap" style="max-width:1240px;margin:0 auto;padding:56px 48px 32px;">
 
     <!-- Top Row -->
-    <div class="footer-top-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,0.07);">
+    <div class="footer-top-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(228,234,241,0.12);">
 
       <!-- Brand -->
       <div>
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#d6a13c;border:1.5px solid #d6a13c;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">AG</span>
+          <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:#C69A3A;border:1.5px solid #C69A3A;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">AG</span>
           <div style="display:flex;flex-direction:column;line-height:1.2;">
-            <b style="font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:2.5px;color:#f4efe6;">ALAKA</b>
-            <span style="font-size:9px;letter-spacing:2px;color:#8a857a;">CAPITAL GROUP</span>
+            <b style="font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:2.5px;color:#FFFFFF;">ALAKA</b>
+            <span style="font-size:9px;letter-spacing:2px;color:#8FA0B8;">CAPITAL GROUP</span>
           </div>
         </div>
-        <p style="font-size:13px;line-height:1.8;color:#8a857a;max-width:220px;">We help startups and growth-stage businesses raise capital, connect with investors, and build long-term value.</p>
+        <p style="font-size:13px;line-height:1.8;color:#8FA0B8;max-width:220px;">We help startups and growth-stage businesses raise capital, connect with investors, and build long-term value.</p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:1.5px;color:#d6a13c;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Quick Links</h4>
+        <h4 style="font-family:'Inter',sans-serif;font-size:13px;letter-spacing:1.5px;color:#C69A3A;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Quick Links</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li><a href="index.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Home</a></li>
-          <li><a href="services.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Services</a></li>
-          <li><a href="startups.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">For Startups</a></li>
-          <li><a href="investors.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">For Investors</a></li>
-          <li><a href="contact.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Contact</a></li>
-          <li><a href="about.html" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Sitemap</a></li>
+          <li><a href="index.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Home</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Services</a></li>
+          <li><a href="startups.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">For Startups</a></li>
+          <li><a href="investors.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">For Investors</a></li>
+          <li><a href="contact.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Contact</a></li>
+          <li><a href="about.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Sitemap</a></li>
         </ul>
       </div>
 
       <!-- Services -->
       <div>
-        <h4 style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:1.5px;color:#d6a13c;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Services</h4>
+        <h4 style="font-family:'Inter',sans-serif;font-size:13px;letter-spacing:1.5px;color:#C69A3A;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Services</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li><a href="#" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Fundraising Advisory</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Investor Connect</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Financial Modeling</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Pitch Deck Advisory</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">Valuation Support</a></li>
+          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Fundraising Advisory</a></li>
+          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Investor Connect</a></li>
+          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Financial Modeling</a></li>
+          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Pitch Deck Advisory</a></li>
+          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Valuation Support</a></li>
         </ul>
       </div>
 
       <!-- Get in Touch -->
       <div>
-        <h4 style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:1.5px;color:#d6a13c;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Get in Touch</h4>
+        <h4 style="font-family:'Inter',sans-serif;font-size:13px;letter-spacing:1.5px;color:#C69A3A;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Get in Touch</h4>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <!-- Phone -->
           <div style="display:flex;align-items:center;gap:12px;">
             <span style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(214,161,60,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d6a13c" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.6 2.1z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C69A3A" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.6 2.1z"/></svg>
             </span>
-            <a href="tel:+917759880916" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">+91 77598 80916</a>
+            <a href="tel:+917759880916" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">+91 77598 80916</a>
           </div>
           <!-- Email -->
           <div style="display:flex;align-items:center;gap:12px;">
             <span style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(214,161,60,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d6a13c" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C69A3A" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
             </span>
-            <a href="mailto:contact@alakacg.com" style="font-size:13.5px;color:#b9b4a9;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#b9b4a9'">contact@alakacg.com</a>
+            <a href="mailto:contact@alakacg.com" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">contact@alakacg.com</a>
           </div>
           <!-- Address -->
           <div style="display:flex;align-items:flex-start;gap:12px;">
             <span style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(214,161,60,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#d6a13c" stroke-width="1.6"><circle cx="12" cy="11" r="3"/><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C69A3A" stroke-width="1.6"><circle cx="12" cy="11" r="3"/><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/></svg>
             </span>
-            <p style="font-size:13px;color:#8a857a;line-height:1.7;margin:0;">401, 4th floor Mangal City Mall Scheme no 54 PU 4, Vijay Nagar, Indore, Madhya Pradesh 452010</p>
+            <p style="font-size:13px;color:#8FA0B8;line-height:1.7;margin:0;">401, 4th floor Mangal City Mall Scheme no 54 PU 4, Vijay Nagar, Indore, Madhya Pradesh 452010</p>
           </div>
         </div>
       </div>
@@ -973,11 +843,11 @@
 
     <!-- Bottom Bar -->
     <div class="footer-bottom-bar" style="display:flex;align-items:center;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:12px;">
-      <span style="font-size:12px;color:#5a5650;letter-spacing:0.3px;">© 2025 Alaka Capital Group. All Rights Reserved.</span>
+      <span style="font-size:12px;color:#8FA0B8;letter-spacing:0.3px;">© 2025 Alaka Capital Group. All Rights Reserved.</span>
       <div style="display:flex;align-items:center;gap:6px;">
-        <a href="#" style="font-size:12px;color:#8a857a;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#8a857a'">Privacy Policy</a>
-        <span style="color:#5a5650;font-size:12px;padding:0 4px;">|</span>
-        <a href="#" style="font-size:12px;color:#8a857a;text-decoration:none;" onmouseover="this.style.color='#d6a13c'" onmouseout="this.style.color='#8a857a'">Terms of Use</a>
+        <a href="#" style="font-size:12px;color:#8FA0B8;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#8FA0B8'">Privacy Policy</a>
+        <span style="color:#8FA0B8;font-size:12px;padding:0 4px;">|</span>
+        <a href="#" style="font-size:12px;color:#8FA0B8;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#8FA0B8'">Terms of Use</a>
       </div>
     </div>
   </div
@@ -1028,6 +898,5 @@
       siteNav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
   </script>
-</body
-></html
->
+</body>
+</html>
