@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logo-templates/acgpng.png">
   <link rel="stylesheet" href="style.css">
 <style>
   :root {
@@ -591,36 +592,39 @@
   <!-- FORM -->
   <div class="form-card">
     <h2>Send Us a Message</h2>
-    <div class="form-row">
-      <input type="text" placeholder="Full Name *">
-      <input type="email" placeholder="Email Address *">
-    </div>
-    <div class="form-row">
-      <input type="text" placeholder="Company / Organization">
-      <input type="tel" placeholder="Phone Number">
-    </div>
-    <div class="form-field">
-      <select>
-        <option value="" disabled selected>I'm reaching out about *</option>
-        <option>Fundraising Advisory</option>
-        <option>Investor Connect</option>
-        <option>Financial Modeling</option>
-        <option>Pitch Deck Advisory</option>
-        <option>Valuation Support</option>
-        <option>General Inquiry</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <textarea placeholder="How can we help you?"></textarea>
-    </div>
-    <button class="btn-gold">
-      Submit Message
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
-    <div class="form-security">
-      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span>Your information is secure and will never be shared.</span>
-    </div>
+    <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe_4b3Tm-IzAE9lOV8yJGFpjv895ricwCLR3Unv0uWYEidr7A/formResponse">
+      <div class="form-row">
+        <input type="text" name="entry.916959167" placeholder="Full Name *" required>
+        <input type="email" name="entry.760758933" placeholder="Email Address *" required>
+      </div>
+      <div class="form-row">
+        <input type="text" name="entry.515407735" placeholder="Company / Organization">
+        <input type="tel" name="entry.1559086790" placeholder="Phone Number">
+      </div>
+      <div class="form-field">
+        <select name="entry.871134388" required>
+          <option value="" disabled selected>I'm reaching out about *</option>
+          <option value="Fundraising Advisory">Fundraising Advisory</option>
+          <option value="Investor Connect">Investor Connect</option>
+          <option value="Financial Modeling">Financial Modeling</option>
+          <option value="Pitch Deck Advisory">Pitch Deck Advisory</option>
+          <option value="Valuation Support">Valuation Support</option>
+          <option value="General Inquiry">General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <textarea name="entry.1130127289" placeholder="How can we help you?"></textarea>
+      </div>
+      <button type="submit" class="btn-gold" style="width:100%;justify-content:center;">
+        Submit Message
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <p class="form-status" aria-live="polite" style="font-size:13px;min-height:18px;margin:8px 0 0;text-align:center;"></p>
+      <div class="form-security">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Your information is secure and will never be shared.</span>
+      </div>
+    </form>
   </div>
 
   <!-- TEAM -->
@@ -634,7 +638,7 @@
       </div>
       <div class="team-info">
         <div class="team-label">For Startups</div>
-        <div class="team-email">agupta@alakacg.com</div>
+        <div class="team-email"><a href="mailto:agupta@alakacg.com" style="color:inherit;text-decoration:none;">agupta@alakacg.com</a></div>
         <div class="team-desc">We help early-stage startups raise capital and grow with confidence.</div>
       </div>
       <div class="team-arrow">›</div>
@@ -646,7 +650,7 @@
       </div>
       <div class="team-info">
         <div class="team-label">For Investors</div>
-        <div class="team-email">agupta@alakacg.com</div>
+        <div class="team-email"><a href="mailto:agupta@alakacg.com" style="color:inherit;text-decoration:none;">agupta@alakacg.com</a></div>
         <div class="team-desc">Access high-quality deal flow and strategic investment opportunities.</div>
       </div>
       <div class="team-arrow">›</div>
@@ -658,7 +662,7 @@
       </div>
       <div class="team-info">
         <div class="team-label">Partnerships</div>
-        <div class="team-email">agupta@alakacg.com</div>
+        <div class="team-email"><a href="mailto:agupta@alakacg.com" style="color:inherit;text-decoration:none;">agupta@alakacg.com</a></div>
         <div class="team-desc">Explore strategic partnerships and collaboration opportunities.</div>
       </div>
       <div class="team-arrow">›</div>
@@ -670,7 +674,7 @@
       </div>
       <div class="team-info">
         <div class="team-label">General Inquiries</div>
-        <div class="team-email">contact@alakacg.com</div>
+        <div class="team-email"><a href="mailto:contact@alakacg.com" style="color:inherit;text-decoration:none;">contact@alakacg.com</a></div>
         <div class="team-desc">For all other questions and corporate inquiries.</div>
       </div>
       <div class="team-arrow">›</div>
@@ -762,7 +766,7 @@
     <h2>Ready to Take the Next Step?</h2>
     <p>Our team is here to help you navigate your journey with clarity, strategy, and confidence.</p>
   </div>
-  <a href="#" class="btn-gold">
+  <a href="https://forms.gle/SG41uJaHyWQx4Vf59" target="_blank" class="btn-gold">
     Schedule a Call
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
@@ -804,11 +808,11 @@
       <div>
         <h4 style="font-family:'Inter',sans-serif;font-size:13px;letter-spacing:1.5px;color:#C69A3A;font-weight:500;text-transform:uppercase;margin-bottom:22px;">Services</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Fundraising Advisory</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Investor Connect</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Financial Modeling</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Pitch Deck Advisory</a></li>
-          <li><a href="#" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Valuation Support</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Fundraising Advisory</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Investor Connect</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Financial Modeling</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Pitch Deck Advisory</a></li>
+          <li><a href="services.html" style="font-size:13.5px;color:#B9C5D6;text-decoration:none;" onmouseover="this.style.color='#C69A3A'" onmouseout="this.style.color='#B9C5D6'">Valuation Support</a></li>
         </ul>
       </div>
 
@@ -897,6 +901,33 @@
     window.addEventListener('scroll', () => {
       siteNav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      const formStatus = contactForm.querySelector('.form-status');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        formStatus.textContent = 'Sending…';
+        formStatus.style.color = '#8FA0B8';
+
+        fetch(contactForm.action, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new FormData(contactForm)
+        }).then(() => {
+          formStatus.textContent = "Thanks! Your message has been sent — we'll be in touch soon.";
+          formStatus.style.color = '#8fd18f';
+          contactForm.reset();
+        }).catch(() => {
+          formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+          formStatus.style.color = '#e0807a';
+        }).finally(() => {
+          submitBtn.disabled = false;
+        });
+      });
+    }
   </script>
 </body>
 </html>
