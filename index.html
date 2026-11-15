@@ -481,7 +481,7 @@
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .srv-card:nth-child(2) {
         border-right: none;
@@ -548,9 +548,33 @@
       }
     }
 
+    /* Phones: stack service/capability cards in a single column */
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .srv-card,
+      .srv-card:nth-child(n) {
+        grid-column: auto;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.75rem 1.5rem;
+      }
+
+      .srv-card:last-child {
+        border-bottom: none;
+      }
+
+      .srv-card p {
+        margin-bottom: 14px;
+      }
+    }
+
     @media (max-width: 480px) {
       .services-grid, .who-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .srv-card, .who-cell {
