@@ -70,136 +70,131 @@
       display: block;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO - UNIFIED INSTITUTIONAL LAYOUT (NO EMPTY SPACE) ===== */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
+      padding: 88px 24px 64px;
       background: #FFFFFF;
+      background-image: radial-gradient(#E4EAF1 1.2px, transparent 1.2px);
+      background-size: 28px 28px;
       border-bottom: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-left {
-      padding: 64px 48px 64px 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 580px;
-      background: #FFFFFF;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(198, 154, 58, 0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .breadcrumb {
-      font-size: 11.5px;
-      letter-spacing: 1.5px;
-      color: var(--text-secondary);
+    .hero-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      margin-bottom: 30px;
-    }
-
-    .breadcrumb .sep {
-      margin: 0 8px;
       color: var(--gold-premium);
+      margin-bottom: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .hero-left h1 {
-      font-size: clamp(34px, 4vw, 44px);
+    .hero-container h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(34px, 4.5vw, 52px);
       line-height: 1.18;
       color: var(--navy-primary);
-      margin-bottom: 22px;
+      margin: 0 auto 20px;
+      max-width: 920px;
+      letter-spacing: -0.5px;
     }
 
-    .hero-left h1 .accent {
+    .hero-container h1 .accent {
       color: var(--gold-premium);
-      display: block;
     }
 
-    .rule {
-      width: 56px;
-      height: 2px;
-      background: var(--gold-premium);
-      margin-bottom: 24px;
-    }
-
-    .hero-left p {
-      font-size: 15px;
-      line-height: 1.85;
+    .hero-desc {
+      font-size: 16.5px;
+      line-height: 1.8;
       color: var(--text-secondary);
-      margin-bottom: 30px;
+      margin: 0 auto 34px;
+      max-width: 760px;
     }
 
     .hero-ctas {
       display: flex;
       gap: 16px;
-      margin-bottom: 46px;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
+      margin-bottom: 54px;
     }
 
-    .hero-features {
+    .hero-pillars-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 18px;
+      text-align: left;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-color);
     }
 
-    .hf {
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 16px rgba(11, 31, 58, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .hf-icon {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-secondary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold-premium);
+      box-shadow: 0 8px 24px rgba(198, 154, 58, 0.12);
+    }
+
+    .pillar-icon {
       color: var(--gold-premium);
+      width: 28px;
+      height: 28px;
     }
 
-    .hf-icon svg {
-      width: 18px;
-      height: 18px;
+    .pillar-icon svg {
+      width: 100%;
+      height: 100%;
     }
 
-    .hf p {
-      font-size: 12px;
+    .pillar-title {
+      font-family: var(--font-heading);
+      font-size: 16.5px;
+      font-weight: 600;
+      color: var(--navy-primary);
+      line-height: 1.25;
+    }
+
+    .pillar-desc {
+      font-size: 13px;
       line-height: 1.6;
       color: var(--text-secondary);
       margin: 0;
-      font-weight: 500;
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-      background: var(--bg-secondary);
-    }
-
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-right .mono {
-      position: absolute;
-      top: 32px;
-      right: 32px;
-      font-family: var(--font-heading);
-      font-size: 54px;
-      font-weight: 600;
-      color: var(--gold-premium);
-      opacity: 0.6;
-      z-index: 2;
-    }
-
-    .hero-right::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(11, 31, 58, 0.25) 100%);
     }
 
     /* ===== SECTION COMMON ===== */
@@ -691,8 +686,8 @@
     }
 
     @media(max-width:980px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-features { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 64px 20px 48px; }
+      .hero-pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .grid-4 { grid-template-columns: 1fr 1fr; }
       .grid-5 { grid-template-columns: 1fr 1fr; }
       .snap-row { grid-template-columns: 1fr 1fr; }
@@ -703,7 +698,11 @@
 
     @media(max-width:640px) {
       .container { padding: 0 20px; }
-      .hero-left { padding: 48px 24px; }
+      .hero { padding: 48px 16px 36px; }
+      .hero-desc { font-size: 15px; margin-bottom: 28px; }
+      .hero-ctas { margin-bottom: 36px; flex-direction: column; width: 100%; }
+      .hero-ctas a { width: 100%; text-align: center; }
+      .hero-pillars-grid { grid-template-columns: 1fr; gap: 14px; padding-top: 28px; }
       .contact-form-wrap { padding: 36px 20px; }
       .grid-4, .grid-5, .snap-row, .partners-row { grid-template-columns: 1fr; }
     }
@@ -752,54 +751,64 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-left">
-      <div class="breadcrumb">HOME <span class="sep">›</span> FOR INVESTORS</div>
-      <div class="eyebrow">For Investors</div>
+    <div class="hero-container">
+      <div class="hero-eyebrow">For Institutional &amp; Strategic Investors</div>
       <h1>Informed Perspectives<br>on <span class="accent">Business Opportunities.</span></h1>
-      <div class="rule"></div>
-      <p>We work with investors and capital partners who value rigorous analysis. Sector research, financial review and
-        clearly documented assumptions help you form a view on an opportunity with greater confidence.</p>
+      <p class="hero-desc">We work with investors and capital partners who value rigorous analysis. Sector research, financial review and clearly documented assumptions help you form a view on an opportunity with greater confidence.</p>
       <div class="hero-ctas">
-        <a href="#get-started" class="btn-solid">Start a Conversation →</a>
-        <a href="#" class="btn-outline-light" id="scheduleCallBtn">Schedule a Call →</a>
+        <a href="#get-started" class="btn-solid">Start a Conversation &nbsp;&rsaquo;</a>
+        <a href="#" class="btn-outline-dark" id="scheduleCallBtn">Schedule a Call &nbsp;&rsaquo;</a>
       </div>
-      <div class="hero-features">
-        <div class="hf">
-          <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+
+      <!-- 4 Pillars Band (Zero Empty Space) -->
+      <div class="hero-pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <circle cx="7" cy="6" r="2.2" />
               <circle cx="17" cy="6" r="2.2" />
               <circle cx="12" cy="9" r="2.2" />
               <path d="M2 19c0-2.8 2-5 5-5s5 2.2 5 5M12 19c0-2.5 1.8-4.5 4.5-4.5S21 16.5 21 19" />
-            </svg></div>
-          <p>Thesis-Led Opportunity Screening</p>
+            </svg>
+          </div>
+          <div class="pillar-title">Thesis-Led Screening</div>
+          <p class="pillar-desc">Proprietary deal flow curated to match your specific mandate, sector focus and ticket size.</p>
         </div>
-        <div class="hf">
-          <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <rect x="5" y="3" width="14" height="18" rx="1" />
               <path d="M9 8h6M9 12h4" />
               <circle cx="15.5" cy="15" r="2.6" />
               <path d="M17.3 16.8L19 18.5" />
-            </svg></div>
-          <p>Evidence-Based Financial Review</p>
+            </svg>
+          </div>
+          <div class="pillar-title">Defensible Review</div>
+          <p class="pillar-desc">Audit-grade financial models and assumptions tested against operational realities.</p>
         </div>
-        <div class="hf">
-          <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M3 12l4-4 3 2 4-5 4 4M8 16l2-2 2 2 2-2" />
               <path d="M3 16c2 1.5 5 1.5 7 0M14 16c2 1.5 5 1.5 7 0" />
-            </svg></div>
-          <p>Long-Term Partnership Approach</p>
+            </svg>
+          </div>
+          <div class="pillar-title">Long-Term Partnership</div>
+          <p class="pillar-desc">Trusted syndication partner supporting co-investments and post-deal value creation.</p>
         </div>
-        <div class="hf">
-          <div class="hf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M3 19h18M5 19v-6m5 6v-9m5 9v-4m5 4V8" />
-            </svg></div>
-          <p>Facts and Assumptions Kept Distinct</p>
+            </svg>
+          </div>
+          <div class="pillar-title">Objective Rigour</div>
+          <p class="pillar-desc">Facts, projections and underlying business assumptions kept clearly distinct.</p>
         </div>
       </div>
-    </div>
-    <div class="hero-right">
-      <span class="mono">AG</span>
-      <img src="logo-templates/investor page photo.png" alt="Investor in private office">
     </div>
   </section>
 
